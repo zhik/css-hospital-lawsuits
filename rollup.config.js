@@ -3,6 +3,7 @@ import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
 import livereload from 'rollup-plugin-livereload';
 import { terser } from 'rollup-plugin-terser';
+import babel from 'rollup-plugin-babel'
 
 const production = !process.env.ROLLUP_WATCH;
 
@@ -35,7 +36,32 @@ export default {
 			dedupe: ['svelte']
 		}),
 		commonjs(),
-
+		production &&
+		babel({
+			extensions: ['.js', '.mjs', '.html', '.svelte'],
+			runtimeHelpers: true,
+			exclude: ['node_modules/@babel/**', /\/core-js\//],
+			presets: [
+				[
+					'@babel/preset-env',
+					{
+						// adapter to ensure IE 11 support
+						targets: '> 0.25%, not dead, IE 11',
+						useBuiltIns: 'usage',
+						corejs: 3 // or 2,
+					}
+				]
+			],
+			plugins: [
+				'@babel/plugin-syntax-dynamic-import',
+				[
+					'@babel/plugin-transform-runtime',
+					{
+						useESModules: true
+					}
+				]
+			]
+		}),
 		// In dev mode, call `npm run start` once
 		// the bundle has been generated
 		!production && serve(),

@@ -8,8 +8,6 @@
     import Charts from './components/Charts.svelte'
     import {dataStore} from './stores'
 
-    export let name;
-
     onMount(() => {
         //init data via d3js, then process data into to geojson
         Promise.all([
