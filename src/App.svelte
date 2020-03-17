@@ -2,9 +2,11 @@
     import {
         onMount
     } from 'svelte';
+    import bbox from '@turf/bbox'
+    import AutoCompleteSearch from './components/AutoCompleteSearch.svelte'
     import Map from './components/Map.svelte'
     import Charts from './components/Charts.svelte'
-    import {data} from './stores'
+    import {dataStore} from './stores'
 
     export let name;
 
@@ -17,19 +19,23 @@
         ]).then(function (files) {
             //extract geojson from topojson
             const county = files[0] //topojson.feature(files[0], files[0].objects.cb_2015_new_york_county_20m);
-            //combine county data with csv
 
-            console.log(county)
+            //combine county data with csv
             county.features.forEach(feature => {
                 //look up in csv
                 const name = feature.properties['NAME'];
                 const lawsuits = files[1].find(item => item['County'] === name)
 
                 if (lawsuits) {
+                    //calculate bounds
+
+                    const bounds = bbox(feature)
+
                     feature.properties = {
                         name,
                         lawsuits: +lawsuits["Number of Lawsuits"],
-                        lawsuits_per_10000: +lawsuits["Rate per 10,000 People"]
+                        lawsuits_per_10000: +lawsuits["Rate per 10,000 People"],
+                        bounds
                     }
                 } else {
                     feature.properties = {name, lawsuits: null, lawsuits_per_10000: null}
@@ -63,7 +69,7 @@
                 })
             })
 
-            data.set({
+            dataStore.set({
                 county,
                 facility
             })
@@ -75,6 +81,7 @@
 </script>
 
 <main>
+   <AutoCompleteSearch/>
     <div class="vis">
         <Map/>
         <Charts/>

@@ -1,3 +1,4 @@
 import { writable } from "svelte/store";
 
-export const data = writable(null)
+export const dataStore = writable(null)
+export const mapStore = writable(null)

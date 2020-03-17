@@ -2,7 +2,7 @@
     import {
         onMount
     } from 'svelte';
-    import {data} from '../stores'
+    import {dataStore, mapStore} from '../stores'
     let container;
     let map;
 
@@ -13,13 +13,16 @@
             center: [-76.358493, 42.650281],
             zoom: 5.3
         });
+
+        //set map to store
+        mapStore.set(map)
     })
 
     $: {
         //init sources and layers
-        if(map && $data){
-            const countySource = new carto.source.GeoJSON($data.county);
-            const facilitySource = new carto.source.GeoJSON($data.facility);
+        if(map && $dataStore){
+            const countySource = new carto.source.GeoJSON($dataStore.county);
+            const facilitySource = new carto.source.GeoJSON($dataStore.facility);
 
             const countyLayer = new carto.Layer('county', countySource, new carto.Viz(`
                 color: ramp(
@@ -41,7 +44,7 @@
                 @system: $system
                 @lawsuits: $lawsuits
                 @link: $link
-                width: ramp(zoomrange([5,6.5,10]),[1.5,4,scaled($lawsuits,15)])
+                width: ramp(zoomrange([5,6.5,10]),[1.5,4,scaled($lawsuits,16) + 2])
                 strokeColor: ramp(zoomRange([5,7]),[#f9f9f9,#959595])
                 color: ramp(zoomRange([5,7]),[white,opacity(@category,0.8)])
             `));
@@ -103,5 +106,4 @@
     :global(.mapboxgl-popup-content p, h4) {
         margin: 0px 5px;
     }
-
 </style>
