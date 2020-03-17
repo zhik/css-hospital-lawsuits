@@ -35,7 +35,6 @@
                     )
                 strokeWidth: 1
                 strokeColor: ramp(zoomRange([6,8]),[#f9f9f9,#959595])
-                opacity: 0.7
             `));
 
             const facilityLayer = new carto.Layer('facility', facilitySource, new carto.Viz(`
