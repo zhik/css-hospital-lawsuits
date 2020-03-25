@@ -13,9 +13,11 @@
     let clickPopup;
 
     onMount(() => {
+        mapboxgl.accessToken = 'pk.eyJ1IjoiemhpayIsImEiOiJjaW1pbGFpdHQwMGNidnBrZzU5MjF5MTJiIn0.N-EURex2qvfEiBsm-W9j7w';
+
         map = new mapboxgl.Map({
             container: 'map',
-            style: carto.basemaps.voyager,
+            style: 'mapbox://styles/mapbox/light-v10',
             center: [-76.358493, 42.650281],
             zoom: 5.3
         });
