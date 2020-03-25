@@ -3,6 +3,9 @@
         onMount
     } from 'svelte';
     import {dataStore, mapStore} from '../stores'
+    import mapboxgl from 'mapbox-gl';
+    import 'mapbox-gl/dist/mapbox-gl.css'
+    import carto from '@carto/carto-vl'
 
     let container;
     let map;
@@ -21,12 +24,21 @@
         mapStore.set(map)
     })
 
+    const legendItems = [
+        ['#d8d9da','N/D','black'],
+        ['#e2f7fe','0','black'],
+        ['#bfe1ec','1-10','black'],
+        ['#91c4db','11-50','black'],
+        ['#69b1ce','51-100','white'],
+        ['#006a92','101-150','white'],
+        ['#003b54','>150','white']
+    ]
+
     $: {
         //init sources and layers
         if (map && $dataStore && !popup) {
             const countySource = new carto.source.GeoJSON($dataStore.county);
             const facilitySource = new carto.source.GeoJSON($dataStore.facility);
-            console.log($dataStore.facility)
             const countyLayer = new carto.Layer('county', countySource, new carto.Viz(`
                 color: ramp(
                     zoomRange([6,10]),
@@ -57,17 +69,20 @@
 
 
             //popup
+            function formatDollarAmount(num){
+                return `$${Number((num).toFixed(1)).toLocaleString()}`
+            }
+
             function generatePopupHTML(features) {
                 return features.map(feature => {
                     const {name, system, lawsuits, link, windfall} = feature.variables
                     return `
                             <h4><a target="_blank" href="${link.value}">${name.value}</a></h4>
-                            ${system ? `<p><strong>System:</strong> ${system.value}</p>` : ''}
+                            ${system.value ? `<p><strong>System:</strong> ${system.value}</p>` : ''}
                             <p><strong>Amount of Lawsuits:</strong> ${lawsuits.value}</p>
-                            ${windfall ? `<p><strong>2018 ICP Excess:</strong> ${windfall.value}</p>` : ''}
+                            ${windfall.value ? `<p><strong>2018 ICP Excess:</strong> ${formatDollarAmount(+windfall.value)}</p>` : ''}
                         `
                 }).join('<br/>')
-
             }
 
             const interactivity = new carto.Interactivity(facilityLayer);
@@ -123,6 +138,13 @@
 
 <div class="content">
     <div id="map" bind:this={container}></div>
+    <div id="legend">
+        <p># OF LAWSUITS 10,000 PPL</p>
+        {#each legendItems as item}
+            <i style="background: {item[0]}; color: {item[2]};">{item[1]}</i><br/>
+        {/each}
+    </div>
+
 </div>
 
 <style>
@@ -134,11 +156,38 @@
         background: #ebebeb;
         display: flex;
         flex-direction: column;
+        position: relative;
     }
 
     #map {
         width: 100%;
         height: 100%;
+    }
+
+    #legend {
+        line-height: 18px;
+        color: #555;
+        position: absolute;
+        bottom: 40px;
+        right: 10px;
+        z-index: 2;
+        background-color: rgba(255,255,255,0.8);
+        padding: 4px;
+        border-radius: 4px;
+        max-width: 6rem;
+    }
+
+    #legend p{
+        margin: 0 0 5px 0;
+    }
+
+    #legend i {
+        width: 100%;
+        height: 18px;
+        float: left;
+        margin-right: 8px;
+        text-align: center;
+        opacity: 0.8;
     }
 
     :global(.mapboxgl-popup-content) {

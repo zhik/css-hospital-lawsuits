@@ -7,6 +7,7 @@
     import Map from './components/Map.svelte'
     import Charts from './components/Charts.svelte'
     import {dataStore} from './stores'
+    import d3 from './assets/d3.js'
 
     onMount(() => {
         //init data via d3js, then process data into to geojson
@@ -48,24 +49,27 @@
             }
 
             files[2].forEach(item => {
-                facility.features.push({
-                    "type": "Feature",
-                    "properties": {
-                        name: item['Standardized Facility Name'].trim(),
-                        system: item['System'].trim(),
-                        lawsuits: +item['Number of Lawsuits'],
-                        link: item['Link'].trim(),
-                        id: item['ID'],
-                        windfall: +item["ICP Windfall"]
-                    },
-                    "geometry": {
-                        "type": "Point",
-                        "coordinates": [
-                            item['Lng'],
-                            item['Lat']
-                        ]
-                    }
-                })
+                //filter for only items with Lng, Lat
+                if(item['Lng'] && item['Lat']){
+                    facility.features.push({
+                        "type": "Feature",
+                        "properties": {
+                            name: item['Standardized Facility Name'].trim(),
+                            system: item['System'].trim(),
+                            lawsuits: +item['Number of Lawsuits'],
+                            link: item['Link'].trim(),
+                            id: item['ID'],
+                            windfall: item["ICP Windfall"].trim()
+                        },
+                        "geometry": {
+                            "type": "Point",
+                            "coordinates": [
+                                item['Lng'],
+                                item['Lat']
+                            ]
+                        }
+                    })
+                }
             })
 
             dataStore.set({

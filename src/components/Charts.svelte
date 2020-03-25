@@ -1,5 +1,6 @@
 <script>
     import {dataStore, mapStore} from '../stores'
+    import d3 from '../assets/d3.js'
 
     let container;
 
