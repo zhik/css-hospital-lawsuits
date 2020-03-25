@@ -13,7 +13,7 @@
 
         map = new mapboxgl.Map({
             container: 'map',
-            style: 'mapbox://styles/mapbox/light-v10',
+            style: carto.basemaps.voyager,
             center: [-76.358493, 42.650281],
             zoom: 5.3
         });
