@@ -55,7 +55,8 @@
                         system: item['System'].trim(),
                         lawsuits: +item['Number of Lawsuits'],
                         link: item['Link'].trim(),
-                        id: item['ID']
+                        id: item['ID'],
+                        windfall: +item["ICP Windfall"]
                     },
                     "geometry": {
                         "type": "Point",
