@@ -168,8 +168,8 @@
         line-height: 18px;
         color: #555;
         position: absolute;
-        bottom: 40px;
-        right: 10px;
+        bottom: 30px;
+        left: 10px;
         z-index: 2;
         background-color: rgba(255,255,255,0.8);
         padding: 4px;
