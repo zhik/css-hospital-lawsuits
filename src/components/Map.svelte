@@ -15,7 +15,7 @@
             container: 'map',
             style: carto.basemaps.voyager,
             center: [-76.358493, 42.650281],
-            zoom: 5.3
+            zoom: 5
         });
 
         //set map to store
@@ -57,7 +57,7 @@
                 @lawsuits: $lawsuits
                 @link: $link
                 @windfall: $windfall
-                width: ramp(zoomrange([5.3,6.5,10]),[0.5,4,scaled($lawsuits,16) + 2])
+                width: ramp(zoomrange([5,6.5,10]),[0.5,4,scaled($lawsuits,16) + 2])
                 strokeColor: ramp(zoomRange([5,7]),[#f9f9f9,#959595])
                 color: ramp(zoomRange([5,7]),[white,opacity(@category,0.8)])
             `));
