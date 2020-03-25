@@ -3,10 +3,6 @@
         onMount
     } from 'svelte';
     import {dataStore, mapStore} from '../stores'
-    import mapboxgl from 'mapbox-gl';
-    import 'mapbox-gl/dist/mapbox-gl.css'
-    import carto from '@carto/carto-vl'
-
     let container;
     let map;
     let popup;
@@ -61,7 +57,7 @@
                 @lawsuits: $lawsuits
                 @link: $link
                 @windfall: $windfall
-                width: ramp(zoomrange([5,6.5,10]),[1.5,4,scaled($lawsuits,16) + 2])
+                width: ramp(zoomrange([5.3,6.5,10]),[0.5,4,scaled($lawsuits,16) + 2])
                 strokeColor: ramp(zoomRange([5,7]),[#f9f9f9,#959595])
                 color: ramp(zoomRange([5,7]),[white,opacity(@category,0.8)])
             `));
@@ -170,7 +166,7 @@
         line-height: 18px;
         color: #555;
         position: absolute;
-        bottom: 30px;
+        bottom: 40px;
         left: 10px;
         z-index: 2;
         background-color: rgba(255,255,255,0.8);

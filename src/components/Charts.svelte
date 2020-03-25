@@ -7,7 +7,7 @@
     $: {
         if ($dataStore) {
             const margin = {top: 20, right: 20, bottom: 100, left: 40},
-                    width = 400 - margin.left - margin.right,
+                    width = 380 - margin.left - margin.right,
                     height = 400 - margin.top - margin.bottom;
 
             // set the ranges
@@ -126,8 +126,8 @@
     .content {
         height: 500px;
         flex: 1 1 420px;
-        min-width: 420px;
-        overflow: auto;
+        min-width: 400px;
+        overflow-x: auto;
         background: #f6f6f6;
         display: flex;
         flex-direction: column;

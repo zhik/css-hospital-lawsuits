@@ -4,7 +4,6 @@ import commonjs from '@rollup/plugin-commonjs';
 import livereload from 'rollup-plugin-livereload';
 import {terser} from 'rollup-plugin-terser';
 import babel from 'rollup-plugin-babel'
-import postcss from 'rollup-plugin-postcss'
 
 const production = !process.env.ROLLUP_WATCH;
 
@@ -26,9 +25,6 @@ export default {
                 css.write('public/build/bundle.css');
             }
         }),
-        postcss({
-            plugins: []
-        }),
         // If you have external dependencies installed from
         // npm, you'll most likely need these plugins. In
         // some cases you'll need additional configuration -
@@ -43,7 +39,7 @@ export default {
         babel({
             extensions: ['.js', '.mjs', '.html', '.svelte'],
             runtimeHelpers: true,
-            exclude: ['node_modules/@babel/**', /\/core-js\//, 'node_modules/mapbox-gl/**', 'node_modules/@carto/**'],
+            exclude: ['node_modules/@babel/**', /\/core-js\//],
             presets: [
                 [
                     '@babel/preset-env',
