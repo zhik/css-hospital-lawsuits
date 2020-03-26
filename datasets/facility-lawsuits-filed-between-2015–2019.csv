@@ -13,7 +13,7 @@ ID,Standardized Facility Name,System,Number of Lawsuits,ICP Windfall,Lat,Lng,Cou
 12,Southside Hospital ,Northwell Health,939,1016015,40.725758,-73.241504,Suffolk,https://southside.northwell.edu/
 13,Staten Island University Hospital ,Northwell Health,784,4836804,40.5847,-74.086125,Richmond,https://siuh.northwell.edu/
 14,Long Island Jewish Medical Center ,Northwell Health,716,15303691,40.75547,-73.706986,Queens,https://lij.northwell.edu/
-15,North Shore University Hospital ,Northwell Health,708,14620495,40.774181,-73.700628,Nassau,https://nsuh.northwell.edu/
+15,North Shore University Hospital ,Northwell Health,708,,40.774181,-73.700628,Nassau,https://nsuh.northwell.edu/
 16,St. Peter's Health Partners ,St. Peter's Health Partners,571,,42.656131,-73.803502,Albany,https://www.sphp.com/
 17,John T. Mather Memorial Hospital ,Northwell Health,567,982322,40.939599,-73.053551,Suffolk,https://www.matherhospital.org/
 18,Cortland Regional,Guthrie,559,867315,42.608839,-76.18736,Cortland,https://www.guthrie.org/location/guthrie-cortland-medical-center
