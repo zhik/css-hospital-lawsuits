@@ -163,6 +163,7 @@
     }
 
     #legend {
+        font-size: 1rem;
         line-height: 18px;
         color: #555;
         position: absolute;
@@ -195,5 +196,9 @@
 
     :global(.mapboxgl-popup-content p, h4) {
         margin: 0px 5px;
+    }
+
+    :global(.mapboxgl-ctrl){
+        font-size: 0.5rem;
     }
 </style>

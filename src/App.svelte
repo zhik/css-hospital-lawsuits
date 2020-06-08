@@ -83,15 +83,19 @@
     })
 </script>
 
-<main>
+<div class="svelte-chart">
    <AutoCompleteSearch/>
     <div class="vis">
         <Map/>
         <Charts/>
     </div>
-</main>
+</div>
 
 <style>
+    .svelte-chart{
+        width: 98%;
+    }
+
     .vis {
         display: flex;
         flex-wrap: wrap;

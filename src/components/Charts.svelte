@@ -2,12 +2,14 @@
     import {dataStore, mapStore} from '../stores'
     import d3 from '../assets/d3.js'
 
-    let container;
+    let container
+    let clientWidth
+    let svg
 
     $: {
-        if ($dataStore) {
+        if ($dataStore && clientWidth) {
             const margin = {top: 20, right: 20, bottom: 100, left: 40},
-                    width = 380 - margin.left - margin.right,
+                    width = clientWidth - margin.left - margin.right,
                     height = 400 - margin.top - margin.bottom;
 
             // set the ranges
@@ -36,13 +38,14 @@
             // append the svg object to the body of the page
             // append a 'group' element to 'svg'
             // moves the 'group' element to the top left margin
-            const svg = d3.select(container)
+            if (svg) svg.remove()
+
+            svg = d3.select(container)
                     .attr("width", width + margin.left + margin.right)
                     .attr("height", height + margin.top + margin.bottom)
                     .append("g")
                     .attr("transform",
                             "translate(" + margin.left + "," + margin.top + ")");
-
 
             // Define the div for the tooltip
             const tooltip = d3.select("body").append("div")
@@ -115,10 +118,10 @@
     }
 </script>
 
-<div class="content">
+<div class="content" bind:clientWidth={clientWidth}>
     <h4>Hospital Lawsuits Against Patients by County, 2015–2019</h4>
-    <h5>Rate per  10,000 People</h5>
-    <svg bind:this={container}></svg>
+    <h5>Rate per 10,000 People</h5>
+    <svg class="chart" bind:this={container}></svg>
     <h6>Zoom in or search to show lawsuits by hospital facility</h6>
 </div>
 
@@ -134,11 +137,11 @@
         align-items: center;
     }
 
-    h4{
+    h4 {
         margin-top: 1rem;
     }
 
-    h5{
+    h5 {
         margin: 0;
         color: #999999;
     }
