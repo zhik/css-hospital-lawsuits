@@ -3,24 +3,12 @@
         onMount
     } from 'svelte';
     import {dataStore, mapStore} from '../stores'
+    import Legend from './Legend.svelte'
+
     let container;
     let map;
     let popup;
     let clickPopup;
-
-    onMount(() => {
-        mapboxgl.accessToken = 'pk.eyJ1IjoiemhpayIsImEiOiJjaW1pbGFpdHQwMGNidnBrZzU5MjF5MTJiIn0.N-EURex2qvfEiBsm-W9j7w';
-
-        map = new mapboxgl.Map({
-            container: 'map',
-            style: carto.basemaps.voyager,
-            center: [-76.358493, 42.650281],
-            zoom: 5
-        });
-
-        //set map to store
-        mapStore.set(map)
-    })
 
     const legendItems = [
         ['#d8d9da','N/D','black'],
@@ -31,6 +19,24 @@
         ['#006a92','101-150','white'],
         ['#003b54','>150','white']
     ]
+    let facilityLegendItems = []
+
+    onMount(() => {
+        mapboxgl.accessToken = 'pk.eyJ1IjoiemhpayIsImEiOiJjaW1pbGFpdHQwMGNidnBrZzU5MjF5MTJiIn0.N-EURex2qvfEiBsm-W9j7w';
+
+        map = new mapboxgl.Map({
+            container: 'map',
+            style: carto.basemaps.voyager,
+            center: [-76.358493, 42.650281],
+            zoom: 5,
+            minZoom: 3,
+            maxZoom: 15,
+            maxBounds: [[-84.2215,37.54457],[-66.0498,48.0487]]
+        });
+
+        //set map to store
+        mapStore.set(map)
+    })
 
     $: {
         //init sources and layers
@@ -57,13 +63,20 @@
                 @lawsuits: $lawsuits
                 @link: $link
                 @windfall: $windfall
-                width: ramp(zoomrange([5,6.5,10]),[0.5,4,scaled($lawsuits,16) + 2])
-                strokeColor: ramp(zoomRange([5,7]),[#f9f9f9,#959595])
-                color: ramp(zoomRange([5,7]),[white,opacity(@category,0.8)])
+                width: ramp(buckets($lawsuits, [50,100,500,1000,5000]), [1.5,3,5,7,9,11])
+                strokeColor: rgba(171,70,78,0.9)
+                color: rgba(239,98,109,0.7)
             `));
 
             countyLayer.addTo(map);
             facilityLayer.addTo(map);
+
+            facilityLayer.on('loaded', () => {
+                if (!facilityLayer.viz.width.getLegendData) {
+                    return;
+                }
+                facilityLegendItems = facilityLayer.viz.width.getLegendData().data
+            });
 
 
             //popup
@@ -136,13 +149,7 @@
 
 <div class="content">
     <div id="map" bind:this={container}></div>
-    <div id="legend">
-        <p># OF LAWSUITS 10,000 PPL</p>
-        {#each legendItems as item}
-            <i style="background: {item[0]}; color: {item[2]};">{item[1]}</i><br/>
-        {/each}
-    </div>
-
+    <Legend countyLegend={legendItems} facilityLegend={facilityLegendItems}/>
 </div>
 
 <style>
@@ -160,33 +167,6 @@
     #map {
         width: 100%;
         height: 100%;
-    }
-
-    #legend {
-        font-size: 1rem;
-        line-height: 18px;
-        color: #555;
-        position: absolute;
-        bottom: 40px;
-        left: 10px;
-        z-index: 2;
-        background-color: rgba(255,255,255,0.8);
-        padding: 4px;
-        border-radius: 4px;
-        max-width: 6rem;
-    }
-
-    #legend p{
-        margin: 0 0 5px 0;
-    }
-
-    #legend i {
-        width: 100%;
-        height: 18px;
-        float: left;
-        margin-right: 8px;
-        text-align: center;
-        opacity: 0.8;
     }
 
     :global(.mapboxgl-popup-content) {

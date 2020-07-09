@@ -13,8 +13,8 @@
         //init data via d3js, then process data into to geojson
         Promise.all([
             d3.json("./datasets/new-york-counties.geojson"),
-            d3.csv("./datasets/county-lawsuits-filed-between-2015–2019.csv"),
-            d3.csv("./datasets/facility-lawsuits-filed-between-2015–2019.csv")
+            d3.csv("./datasets/county.csv"),
+            d3.csv("./datasets/facility.csv")
         ]).then(function (files) {
             //extract geojson from topojson
             const county = files[0] //topojson.feature(files[0], files[0].objects.cb_2015_new_york_county_20m);
