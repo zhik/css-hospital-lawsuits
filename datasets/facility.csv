@@ -1,0 +1,87 @@
+ID,Standardized Facility Name,System,Number of Lawsuits,ICP Windfall,Lat,Lng,County,Link
+1,"Crouse Health Hospital, Inc.",Northwell Health,5546,4731128,43.041321,-76.138374,Onondaga,https://www.crouse.org/
+2,NYU Winthrop,NYU Langone Health,2749,3637156,40.740555,-73.643045,Nassau,https://nyuwinthrop.org/
+3,North Shore University Manhasset,Northwell Health,2233,14620495,40.775122,-73.701094,Nassau,https://nsuh.northwell.edu/
+4,Huntington Hospital,Northwell Health,1675,824335,40.879588,-73.416271,Suffolk,https://huntington.northwell.edu/
+5,Samaritan Hospital ,St. Peter's Health Partners,1557,197907,42.674123,-73.748474,Albany,https://www.sphp.com/location/samaritan-hospital-albany-memorial-campus
+6,New York Presbyterian,New York-Presbyterian,1283,20483171,40.78593,-73.962515,New York,https://www.nyp.org
+7,Nathan Littauer Hospital ,,1279,2469606,43.071578,-74.331918,Fulton,https://www.nlh.org/
+8,Lenox Hill Hospital ,Northwell Health,1186,1631037,40.773989,-73.960853,New York,https://lenoxhill.northwell.edu/
+9,South Nassau Communities Hospital ,Mount Sinai Health System,1158,3800824,40.651925,-73.630601,Nassau,https://www.southnassau.org/sn
+10,Albany Medical Center Hospital ,,1125,3057587,42.653638,-73.777142,Albany,https://www.amc.edu/
+11,Brookhaven Memorial Hospital ,,994,7063966,40.780745,-72.976779,Suffolk,https://licommunityhospital.org/
+12,Southside Hospital ,Northwell Health,939,1016015,40.725758,-73.241504,Suffolk,https://southside.northwell.edu/
+13,Staten Island University Hospital ,Northwell Health,784,4836804,40.5847,-74.086125,Richmond,https://siuh.northwell.edu/
+14,Long Island Jewish Medical Center ,Northwell Health,716,15303691,40.75547,-73.706986,Queens,https://lij.northwell.edu/
+15,North Shore University Hospital ,Northwell Health,708,0,40.774181,-73.700628,Nassau,https://nsuh.northwell.edu/
+16,St. Peter's Health Partners ,St. Peter's Health Partners,571,0,42.656131,-73.803502,Albany,https://www.sphp.com/
+17,John T. Mather Memorial Hospital ,Northwell Health,567,982322,40.939599,-73.053551,Suffolk,https://www.matherhospital.org/
+18,Cortland Regional,Guthrie,559,867315,42.608839,-76.18736,Cortland,https://www.guthrie.org/location/guthrie-cortland-medical-center
+19,North Shore University Hospital at Plainview,Northwell Health,515,355061,40.77507,-73.478699,Nassau,https://plainview.northwell.edu/
+20,Ellis Hospital,,495,3705940,42.820106,-73.915728,Schenectady,http://www.ellishospital.org/
+21,Albany Memorial Hospital ,St. Peter's Health Partners,451,1616138,42.674122,-73.748474,Albany,https://www.sphp.com/location/albany-memorial-campus
+22,Chenango Memorial Hospital ,United Health Services,411,19327,42.54117,-75.525696,Chenango,https://www.nyuhs.org/locations/uhs-chenango-memorial-hospital/
+23,New York Presbyterian Queens,New York-Presbyterian,390,-1659199,40.747246,-73.825336,Queens,https://www.nyp.org/queens
+24,North Shore University Forest Hills,Northwell Health,360,0,40.728978,-73.851598,Queens,https://foresthills.northwell.edu/
+25,Orange Regional,,333,-3994167,41.441797,-74.368191,Orange,https://www.ormc.org/
+26,Peconic Bay Medical Center ,Northwell Health,299,2574840,40.934135,-72.67392,Suffolk,https://www.pbmchealth.org/
+27,North Shore University Glen Cove,Northwell Health,231,2220528,40.871199,-73.62253,Nassau,https://glencove.northwell.edu/
+28,St. Lukes Cornwall Hospital ,Montefiore,175,318243,41.435496,-74.042558,Orange,https://www.montefioreslc.org/
+29,Stony Brook Medicine ,,162,0,40.908966,-73.115365,Suffolk,https://www.stonybrookmedicine.edu/
+30,New York Presbyterian/Brooklyn Methodist,New York-Presbyterian,158,0,40.667598,-73.978513,Kings,https://www.nyp.org/brooklyn
+31,New York Presbyterian/Lower Manhattan,New York-Presbyterian,152,0,40.70995,-74.004792,New York,https://www.nyp.org/lowermanhattan
+32,Long Island Jewish Valley Stream,Northwell Health,104,0,40.681212,-73.686303,Nassau,https://valleystream.northwell.edu
+33,St Peters Hospital ,St. Peter's Health Partners,82,4680200,42.656183,-73.803631,Albany,https://www.sphp.com/location/st-peters-hospital
+34,New York Community Hospital of Brooklyn,,76,-92986,40.613873,-73.948592,Kings,https://nych.com/
+35,Jacobi Medical Center,NYC Health ,72,-19209025,40.855771,-73.84637,Bronx,https://www.nychealthandhospitals.org/jacobi/
+36,Mid-Hudson Regional Hospital of WMC ,Westchester Medical Center Health Network,67,0,41.717901,-73.927787,Dutchess,https://www.midhudsonregional.org/
+37,Westchester Medical Center ,Westchester Medical Center Health Network,67,-1780646,41.086077,-73.806105,Westchester,https://www.westchestermedicalcenter.org/
+38,The New York Hospital Medical Center of Queens ,New York-Presbyterian,59,0,40.747057,-73.825388,Queens,https://www.nyp.org/queens
+39,Bellevue,NYC Health ,56,-49430977,40.739129,-73.975525,New York,https://www.nychealthandhospitals.org/bellevue/
+40,Kings County Hospital ,NYC Health ,54,-35310282,40.6568,-73.944909,Kings,https://www.nychealthandhospitals.org/kingscounty/
+41,Niagara Falls Memorial Medical Center ,,51,-1425813,43.093533,-79.049777,Niagara,https://nfmmc.org/
+42,Kaleida Health ,,49,0,42.900808,-78.864846,Erie,https://www.kaleidahealth.org/
+43,Northern Dutchess Hospital ,Nuvance Health,35,66926,41.935383,-73.91258,Dutchess,https://patients.healthquest.org/locations/northern-dutchess-hospital/
+44,Maimonides Medical Center,,28,-15803268,40.639232,-73.998156,Kings,https://www.maimonidesmed.org/
+45,NYU Lutheran Medical Center,NYU Langone Health,28,0,40.646644,-74.020941,Kings,https://nyulangone.org/locations/nyu-langone-hospital-brooklyn
+46,St Josephs Hospital Health Center ,Trinity Health,26,0,43.056025,-76.149692,Onondaga,https://www.sjhsyr.org/
+47,Jones Memorial Hospital ,URM,24,909037,42.12289,-77.950998,Allegany,https://www.urmc.rochester.edu/jones-memorial-hospital.aspx
+48,North Central Bronx,NYC Health ,21,9771657,40.880473,-73.881183,Bronx,https://www.nychealthandhospitals.org/northcentralbronx/
+49,Elmhurst Hospital Center ,NYC Health ,18,-57913267,40.745352,-73.885566,Queens,https://www.nychealthandhospitals.org/elmhurst/
+50,"Southern Tier Credit Center, Inc. ",,18,0,42.079071,-78.429425,Cattaraugus,https://www.sthcs.org/
+51,Cuba Memorial Hospital ,,17,498133,42.212941,-78.287862,Allegany,https://www.cubamemorialhospital.com/
+52,Sunnyview Rehabilitation Hospital,St. Peter's Health Partners,16,60098,42.821263,-73.915029,Schenectady,https://www.sphp.com/location/samaritan-hospital-albany-memorial-campus
+53,Metroplitan Hospital Center,NYC Health ,12,-26762721,40.784909,-73.944702,New York,https://www.nychealthandhospitals.org/metropolitan/
+54,Putnam Hospital Center ,Nuvance Health,12,64764,41.382512,-73.663046,Putnam,https://patients.healthquest.org/locations/putnam-hospital-center/
+55,Ellenville Regional Hospital ,,10,755558,41.732674,-74.379171,Ulster,https://erhny.org/
+56,Harlem Hospital Center,NYC Health ,9,6462356,40.81437,-73.939708,New York,https://www.nychealthandhospitals.org/harlem/
+57,Richmond University Medical Center ,,9,62505,40.635646,-74.105988,Richmond,https://www.rumcsi.org/
+58,Coney Island Hospital,NYC Health ,8,-34002521,40.585731,-73.965085,Kings,https://www.nychealthandhospitals.org/ConeyIsland/
+59,NYU Hospitals Center,NYU Langone Health,8,10129453,40.745898,-73.98157,New York,https://med.nyu.edu/
+60,Montefiore Medical Center ,Montefiore,7,9071462,40.880956,-73.879466,Bronx,https://www.montefiore.org/
+61,Strong Memorial,URM,7,1243055,43.12333,-77.624635,Monroe,https://www.urmc.rochester.edu/strong-memorial.aspx
+62,Woodhull,NYC Health,7,-36814854,40.699612,-73.943003,Kings,https://www.nychealthandhospitals.org/woodhull/
+63,HealthAlliance Hospital Broadway Campus ,Westchester Medical Center Health Network,6,2351473,41.927153,-73.995051,Ulster,https://www.hahv.org/
+64,Lutheran Medical Center ,NYU Langone Health,6,0,40.638605,-74.020329,Kings,https://nyulangone.org/locations/nyu-langone-hospital-brooklyn?cpsys_redirect=mob
+65,Huntington Hospital Association,Northwell Health,5,0,40.879588,-73.416271,Suffolk,https://huntington.northwell.edu/
+66,NYU Langone Hospitals,NYU Langone Health,5,0,40.745985,-73.981555,New York,https://nyulangone.org/
+67,Brookhaven Memorial Hospital as Long Island Community Hospital,,4,0,40.780036,-72.977217,Suffolk,https://licommunityhospital.org/
+68,NYU Langone Brooklyn,NYU Langone Health,4,0,40.647644,-74.020938,Kings,https://nyulangone.org/locations/nyu-langone-hospital-brooklyn
+69,Lincoln Medical Center ,NYC Health,3,-10134861,40.817167,-73.924406,Bronx,https://www.nychealthandhospitals.org/lincoln
+70,Mount Sinai Queens ,Mount Sinai Health System,3,0,40.768250,-73.924794,Queens,https://www.mountsinai.org/locations/queens
+71,St. Johns Riverside Hospital ,Riverside Health,3,6564177,40.969480,-73.886479,Westchester,http://www.riversidehealth.org/
+72,"Catholic Health System of Long Island, Inc ",Catholic Health Services,2,0,40.685920,-73.634677,Nassau,https://www.chsli.org/
+73,"Community General Hospital of Greater Syracuse, Inc. ",Upstate Health System,2,0,43.008026,-76.168048,Onondaga,https://www.upstate.edu/community/
+74,Interfaith Medical Center ,,2,-1077034,40.675358,-73.958986,Kings,http://www.interfaithmedical.com/
+75,"Kaleida Health, Buffalo General Hospital ",Kaleida Health,2,0,42.900840,-78.865667,Erie,https://www.kaleidahealth.org/bgmc/
+76,Mount Sinai Hospital ,Mount Sinai Health System,2,-31721507,40.790032,-73.953686,New York,https://www.mountsinai.org/locations/mount-sinai
+77,Columbia Presbyterian Allen Pavillion Medicine ,ColumbiaDoctors,1,0,40.873208,-73.912691,New York,https://www.columbiadoctors.org/newyork-presbyterian-allen-hospital
+78,Eastern Long Island Hospital ,Eastern Long Island Hospital Association,1,0,41.110868,-72.360932,Suffolk,https://elih.stonybrookmedicine.edu/
+79,Eastern Long Island Hospital,Eastern Long Island Hospital Association,1,0,41.110868,-72.360932,Suffolk,https://elih.stonybrookmedicine.edu/
+80,Erie County Medical Center Corporation ,,1,-2852178,42.926611,-78.831532,Erie,https://www.ecmc.edu/
+81,Health Alliance Hospital ,Westchester Medical Center Health Network,1,0,41.927153,-73.995051,Ulster,https://www.hahv.org/
+82,Long Island Community Hospital ,,1,0,40.780745,-72.976779,Suffolk,https://licommunityhospital.org/
+83,New York Presbyterian/Lawrence,New York-Presbyterian,1,1959188,40.942565,-73.836997,Westchester,https://www.nyp.org/lawrence
+84,NYU Hospitals Center ,NYU Langone Health,1,0,40.745985,-73.981555,New York,https://med.nyu.edu/
+85,St. Francis Hospital,Catholic Health Services,1,0,40.804774,-73.670254,Nassau,https://stfrancisheartcenter.chsli.org/
+86,White Plains Hospital Center,Montefiore,1,709310,41.026178,-73.768975,Westchester,https://www.wphospital.org/
