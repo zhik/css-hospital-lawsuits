@@ -10,12 +10,12 @@
     <p class="title" on:click={() => opened = !opened}><strong>Legend </strong> ({opened ? 'hide': 'show'})</p>
     {#if opened}
         <hr>
-        <p class="legend-item"><strong>County:</strong> # of lawsuits 10,000 People</p>
+        <p class="legend-item"><strong>County: </strong>Lawsuits per 10,000 People</p>
         {#each countyLegend as item}
             <i style="background: {item[0]}; color: {item[2]};">{item[1]}</i><br/>
         {/each}
         <hr>
-        <p class="legend-item"><strong>Facility:</strong> # of lawsuits</p>
+        <p class="legend-item"><strong>Facility: </strong>Lawsuits</p>
         <div class="bubble-legend">
             <ul class="bubble-list">
                 {#each facilityLegend as item, i}
@@ -94,7 +94,7 @@
 
     .bubble-label{
         position: absolute;
-        font-size: 0.7rem;
+        font-size: 0.75rem;
         line-height: 0.9rem;
     }
 
